@@ -1,4 +1,4 @@
-#Small Webapps Projects
+# Small Webapps Projects
 This is a small repo over some small projects that I did to either help my friends or just to learn some new web dev concepts
 
 All of the project descriptions in this repo will have the following structure:
@@ -12,7 +12,7 @@ All of the project descriptions in this repo will have the following structure:
 | New things I improved: |(a short summary over what knowledge was gained or improved) |
 
  ## 1.  P.O.C - Clock Design
- 
+
 |Topic | Description |
 |--|--|
 | Project Name: | P.O.C - Clock Design
