@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="./css/style.css">
+
+    <title>P.O.C - Clock Design</title>
+</head>
+<body>
+    <div class="clock">
+        <svg
+            class="clock__face__outline"
+            viewBox="0 0 100 100"
+            xmlns="http://www.w3.org/2000/svg" 
+            xmlns:svg="http://www.w3.org/2000/svg">        
+            <circle class="clock__face__outline__circle" cx="50" cy="50" r="50"></circle>
+            <circle class="clock__face__outline__circle__elapsed red" cx="50" cy="50" r="50"></circle>
+        </svg>
+
+        <div class="clock__face">
+            <span class="clock__handle clock__horizontal__center three">03</span>
+            <span class="clock__handle clock__vertical__center six">06</span>
+            <span class="clock__handle clock__horizontal__center nine">09</span>
+            <span class="clock__handle clock__vertical__center twelve">12</span>   
+
+            <div class="countdown__body">
+                <div class="countdown__days">00</div>:
+                <div class="countdown__hours">00</div>:
+                <div class="countdown__minutes">00</div>:
+                <div class="countdown__seconds">00</div>
+            </div>
+        
+        </div>
+        <div class="time">
+            <div class="time__body">
+                <div class="time__hours">12</div>:
+                <div class="time__minutes">12</div>
+            </div>
+        </div>
+        <div class="date">
+            <div class="date__body">
+                <div class="date__text">12 february 2020</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
