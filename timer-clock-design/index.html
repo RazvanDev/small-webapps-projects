@@ -2,13 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="./css/style.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1" id="viewport-meta" />
+    <link rel="stylesheet" media="screen and (min-device-width: 300px) and (max-device-width: 600px) and (max-device-height: 900px)" href="./css/mobile-style.css">
+    <link rel="stylesheet" media="screen and (min-device-width: 768px)" href="./css/desktop-style.css">
 
     <title>P.O.C - Clock Design</title>
 </head>
 <body>
+    <div class="switch">
+        Dark mode:<span class="inner__switch">ON</span>
+    </div>
     <div class="clock">
         <svg
             class="clock__face__outline"
@@ -16,7 +19,7 @@
             xmlns="http://www.w3.org/2000/svg" 
             xmlns:svg="http://www.w3.org/2000/svg">        
             <circle class="clock__face__outline__circle" cx="50" cy="50" r="50"></circle>
-            <circle class="clock__face__outline__circle__elapsed red" cx="50" cy="50" r="50"></circle>
+            <circle class="clock__face__outline__circle__elapsed" cx="50" cy="50" r="50"></circle>
         </svg>
 
         <div class="clock__face">

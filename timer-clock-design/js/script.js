@@ -6,10 +6,13 @@ let countdownHours = document.querySelector('.countdown__hours');
 let countdownMinutes = document.querySelector('.countdown__minutes');
 let countdownSeconds = document.querySelector('.countdown__seconds');
 
-let clockFaceElapsed = document.querySelector(".clock__face__outline__circle__elapsed.red");
+let toggleModeBtn = document.querySelector(".inner__switch");
+
+let clockFaceElapsed = document.querySelector(".clock__face__outline__circle__elapsed");
 clockFaceElapsed.style.strokeDashArray = "360";
-let originalSetDate = new Date('Oct 16, 2020 19:05:00') 
-let finalDate = new Date('Oct 15, 2020 19:10:00');
+
+let originalSetDate = new Date('Oct 31, 2020 17:55:00') 
+let finalDate = new Date('Oct 31, 2020 18:00:00');
 
 let date = document.querySelector(".date__text");
 
@@ -27,6 +30,27 @@ let startApp = () => {
         updateDate();
         updateCountdown();
     }, 1000);
+    toggleMode();
+}
+
+toggleModeBtn.onclick = () => { toggleMode(); }
+
+let toggleMode = () => {
+    let bodyElement = document.querySelector('body');
+    
+    if(bodyElement.classList.contains('dark')) {
+        bodyElement.classList.remove('dark');
+        toggleModeBtn.textContent = "OFF";
+        bodyElement.classList.add('light');
+        clockFaceElapsed.classList.add("blue");
+        clockFaceElapsed.classList.remove("red");
+    } else {
+        bodyElement.classList.remove('light');
+        toggleModeBtn.textContent = "ON";
+        bodyElement.classList.add('dark');
+        clockFaceElapsed.classList.add("red");
+        clockFaceElapsed.classList.remove("blue");
+    }
 }
 
 let updateTime = () => {

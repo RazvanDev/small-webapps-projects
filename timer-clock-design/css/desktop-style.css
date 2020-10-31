@@ -1,0 +1,208 @@
+@font-face {
+    font-family: robotoThin;
+    src: url("../assets/fonts/Roboto-Thin.ttf");
+}
+
+@font-face {
+    font-family: robotoRegular;
+    src: url("../assets/fonts/Roboto-Regular.ttf");
+}
+
+html {
+    width: 100vw;
+    height: 100vh;
+    max-height: 400px;
+    margin: 0;
+    overflow-x: hidden;
+    user-select: none;
+}
+
+body {
+    width: 100vw;
+    height: 100%; 
+    margin: 0;
+    display: flex;
+}
+
+.switch {
+    position: absolute;
+    top: 2vh;
+    left: calc(100% - 60vw);
+}
+
+.inner__switch {
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid #555;
+    border-radius: 1.25rem;
+    width: 3.125rem;
+    text-align: center;
+    font-size: 1rem;
+    padding: 0.1875rem;
+    margin-left: 0.3125rem;
+}
+
+.clock {
+    position: absolute;
+    top: 15%;
+    left: calc(20% + 2vw);
+    width: 30vmin;
+    height: 30vmin;
+}
+
+.clock__face {
+    width: 30vmin;
+    height: 30vmin;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.clock__face__outline {
+    position: absolute;
+    width: 30vmin;
+    height: 30vmin;
+    overflow: visible;
+    transform: rotateY(-180deg) rotateZ(-90deg);
+}
+
+.clock__face__outline__circle {
+    fill: none;
+    stroke: none;  
+}
+
+.clock__face__outline__circle {
+    stroke-width: 4px;
+    stroke-dasharray: 360px;
+    stroke-dashoffset: 0px;
+    stroke-linecap: round;
+    fill: none;
+}
+
+.clock__face__outline__circle__elapsed {
+    stroke-width: 4px;
+    stroke-dasharray: 360px;
+    stroke-linecap: round;
+    fill: none;
+}
+
+.clock__face::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 49vmin;
+    height: 49vmin;
+    border-radius: 50%;
+    z-index: -3;
+}
+
+.time {
+    margin-top: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.time__body {
+    display: flex;
+    font-family: robotoThin;
+    font-size: 15vmin;
+}
+
+.countdown__body {
+    display: flex;
+    font-family: robotoThin;
+    font-size: 5vmin;
+}
+
+.clock__handle {
+    position: absolute;
+    font-family: robotoThin;
+    font-size: 4vmin;
+}
+
+.clock__horizontal__center {
+    top: calc(50% - 2vmin);
+}
+
+.clock__vertical__center {
+    right: calc(50% - 2vmin);
+}
+
+.twelve {
+    bottom: calc(100% + 3vmin);
+}
+
+.three {
+    left: calc(100% + 3.5vmin);
+}
+
+.six {
+    top: calc(100% + 3.4vmin);
+}
+
+.nine {
+    right: calc(100% + 3.5vmin);;
+}
+
+
+.date {
+    margin-top: 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.date__body {
+    display: flex;
+    font-family: robotoThin;
+    font-size: 4.17vmin;
+    font-weight: lighter;
+    justify-content: space-between;
+}
+
+body.dark {
+    color: #fff;
+    background: #1a1a1a;
+}
+
+.dark .clock__face::after {
+    background: #1a1a1a;
+    box-shadow:  17px 17px 43px #0a0a0a, 
+             -17px -17px 43px #2a2a2a;
+}
+
+.dark .clock__face__outline__circle {
+    stroke: #fff;
+}
+
+body.light {
+    color: #0a0a0a;
+    background: #e0e0e0;
+}
+
+.light .clock__face::after {
+    background: #e0e0e0;
+    -webkit-box-shadow: 5px 2px 10px 8px rgba(204,204,204,0.74); 
+    box-shadow: 5px 2px 10px 8px rgba(204,204,204,0.74);
+}
+
+.light .clock__face__outline__circle {
+    stroke: #aaa;
+}
+
+
+.clock__face__outline__circle__elapsed.red {
+    stroke-dasharray: 360px;
+    stroke: #f52929;
+}
+
+.clock__face__outline__circle__elapsed.blue {
+    stroke-dasharray: 360px;
+    stroke: #0000cc;
+}

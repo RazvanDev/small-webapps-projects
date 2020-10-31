@@ -19,5 +19,5 @@ All of the project descriptions in this repo will have the following structure:
 | Project Description: | A simple web-responsive app for a Clock with a Countdown timer.
 | Purpose: | A friend of mine is just starting his Graphic Design career and I decided to help him build his portofolio and also show him some basic Web Development skills.
 | Concepts to practice:| Basic HTML, CSS and JS concepts.
-| TODO List: | <ul><li> -[x] create a basic web app project structure</li><li>- [x] create the application using only basic HTML, CSS and JS (no frameworks allowed)</li><li>- [ ] create a light/dark mode toggle button</li><li>- [ ] create a modal from which to set a new countdown to (currently static).</li></ul>
+| TODO List: | <ul><li> -[x] create a basic web app project structure</li><li>- [x] create the application using only basic HTML, CSS and JS (no frameworks allowed)</li><li>- [x] create a light/dark mode toggle button</li><li>- [ ] create a modal from which to set a new countdown to (currently static).</li></ul>
 | New things I improved: | <ul><li> improved understanding of how relative/absolute positioning works.</li><li> grasped some new CSS added concepts (vh/vw measurements, flex CSS rules).</li><li> played around with SVG shapes and styling.</li></ul>
