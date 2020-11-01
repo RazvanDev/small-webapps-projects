@@ -1,3 +1,4 @@
+let clockComponent = document.querySelector(".clock");
 let timeH = document.querySelector('.time__hours');
 let timeM = document.querySelector(".time__minutes");
 
@@ -34,6 +35,19 @@ let startApp = () => {
 }
 
 toggleModeBtn.onclick = () => { toggleMode(); }
+
+clockComponent.onclick = () => {
+    toggleCalendarComponent();
+}
+
+let toggleCalendarComponent = () => {
+    let calendarComponent = document.querySelector(".calendar");
+    if (calendarComponent.classList.contains("hide")) {
+        calendarComponent.classList.remove("hide");
+      } else {
+        calendarComponent.classList.add("hide");
+      }  
+}
 
 let toggleMode = () => {
     let bodyElement = document.querySelector('body');

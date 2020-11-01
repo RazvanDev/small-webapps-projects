@@ -45,7 +45,7 @@ body {
 .clock {
     position: absolute;
     top: 15%;
-    left: calc(20% + 2vw);
+    left: calc(14% + 2vw);
     width: 30vmin;
     height: 30vmin;
 }
@@ -161,7 +161,7 @@ body {
 .date__body {
     display: flex;
     font-family: robotoThin;
-    font-size: 4.17vmin;
+    font-size: 3.8vmin;
     font-weight: lighter;
     justify-content: space-between;
 }

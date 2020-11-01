@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" id="viewport-meta" />
     <link rel="stylesheet" media="screen and (min-device-width: 300px) and (max-device-width: 600px) and (max-device-height: 900px)" href="./css/mobile-style.css">
     <link rel="stylesheet" media="screen and (min-device-width: 768px)" href="./css/desktop-style.css">
-
+    <link rel="stylesheet" href="./css/calendar.css">
     <title>P.O.C - Clock Design</title>
 </head>
 <body>
@@ -48,7 +48,36 @@
             </div>
         </div>
     </div>
-
+	<div class="calendar hide">
+        <div class="date__year__picker">
+            <button class="prev__button"></button>
+            <span>2020</span>
+            <button class="next__button"></button>
+        </div>
+		<div class="date__table">
+			<div class="date__week">
+				<div class="date__headers" >Mon</div>
+				<div class="date__headers">Tue</div>
+				<div class="date__headers">Wed</div>
+				<div class="date__headers">Thu</div>
+				<div class="date__headers">Fri</div>
+				<div class="date__headers">Sat</div>
+				<div class="date__headers">Sun</div>
+			</div>
+			<div class="date__week"></div>
+			<div class="date__week"></div>
+			<div class="date__week"></div>
+			<div class="date__week"></div>
+			<div class="date__week"></div>
+			<div class="date__week"></div>
+        </div>
+        <div class="date__month__picker">
+            <button class="prev__button"></button>
+            <span>November</span>
+            <button class="next__button"></button>
+        </div>
+	</div>
     <script src="./js/script.js"></script>
+    <script src="./js/calendar.js"></script>
 </body>
 </html>
