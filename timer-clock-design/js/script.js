@@ -42,11 +42,20 @@ clockComponent.onclick = () => {
 
 let toggleCalendarComponent = () => {
     let calendarComponent = document.querySelector(".calendar");
-    if (calendarComponent.classList.contains("hide")) {
-        calendarComponent.classList.remove("hide");
-      } else {
-        calendarComponent.classList.add("hide");
-      }  
+    if(!calendarComponent.classList.contains("hide") && !calendarComponent.classList.contains("show")) {
+        calendarComponent.classList.add("show");
+        clockComponent.classList.add("calendar__active");
+    } else {
+        if (calendarComponent.classList.contains("show")) {
+            calendarComponent.classList.remove("show");
+            calendarComponent.classList.add("hide");
+            clockComponent.classList.remove("calendar__active");
+        } else {
+            calendarComponent.classList.remove("hide");
+            calendarComponent.classList.add("show");
+            clockComponent.classList.add("calendar__active");
+        }
+    }  
 }
 
 let toggleMode = () => {
