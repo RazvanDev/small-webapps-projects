@@ -11,6 +11,12 @@
     --cellHeight: calc(var(--tableSizeH) / 7);
     --mobileClockSize: 50vmin;
     --desktopClockSize: 30vmin;
+    
+    --mobileTableSizeW: 70vw;
+    --mobileTableSizeH: 70vw;
+    --mobileCalendarWidth: calc(var(--mobileTableSizeW) + 5vw);
+    --mobileCellWidth: calc(var(--mobileTableSizeW) / 7);
+    --mobileCellHeight: calc(var(--mobileTableSizeH) / 7);
 }
 
 @font-face {

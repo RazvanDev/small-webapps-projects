@@ -1,0 +1,217 @@
+@import "./general-rules.css";
+
+.calendar {
+    position: absolute;
+    top: 15%;
+    right: calc((100% - var(--mobileCalendarWidth)) / 2);
+    width: var(--mobileCalendarWidth);
+    font-family: RobotoThin;
+    border-radius: 6%;
+    opacity: 0;
+}
+
+.calendar.show {
+    -webkit-animation-name: fadeInLeft;
+    animation-name: fadeInLeft;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.calendar.hide {
+    -webkit-animation-name: fadeOutLeft;
+    animation-name: fadeOutLeft;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+ 
+.date__table {
+    display: grid;
+    width: var(--mobileTableSizeW);
+    height: var(--mobileTableSizeH);
+    margin: 0 auto;
+}
+
+.date__week {
+    display: inherit;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    width: inherit;
+    height: var(--cellHeight);
+}
+
+.date__cell {
+    text-align: center;
+    vertical-align: middle;
+    font-family: robotoThin;
+    font-size: calc(var(--mobileCellHeight) / 2);
+    line-height: var(--mobileCellHeight);
+    width: var(--mobileCellWidth);
+    height: var(--mobileCellHeight);
+    cursor: pointer;
+}
+
+
+
+.date__headers {    
+    text-align: center;
+    vertical-align: middle;
+    font-family: robotoBold;
+    font-size: calc(var(--mobileCellHeight) / 2.5);
+    line-height: var(--mobileCellHeight);
+    width: var(--mobileCellWidth);
+    height: var(--mobileCellHeight);
+}
+
+.dark .date__table {
+    background: var(--red);
+}
+
+.dark .date__week {
+    border-bottom: 1px solid var(--red);
+}
+
+.dark .date__cell, .dark .date__headers {
+    background-color: var(--darkBackground);
+    border-right: 1px solid var(--red);
+}
+
+.dark .date__cell:hover {
+    background-color: var(--red);
+    transition: ease-in 0.5s;
+}
+
+.light .date__table {
+    background: var(--blue);
+}
+
+.light .date__week {
+    border-bottom: 1px solid var(--blue); 
+}
+
+.light .date__cell, .light .date__headers {
+    background-color: var(--lightBackground);
+    border-right: 1px solid var(--blue);
+}
+
+.light .date__cell:hover {
+    background-color: var(--blue);
+    transition: ease-in 0.5s;
+}
+
+.date__week:last-child {
+    border-bottom: none;
+}
+
+.date__cell:last-child, .date__headers:last-child {
+    border-right: none;
+}
+
+.date__year__picker, .date__month__picker {
+    margin: 0px auto;
+    width: inherit;
+    font-size: 6vmin;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.date__year__picker {
+    margin-top: 2vmin;
+}
+
+.date__year__picker > span, .date__year__picker > button {
+    margin: 0 auto;
+    margin-bottom: 3.5vmin;
+}
+
+.date__year__picker > span {
+    display: inline-block;
+    line-height: 1.5em;
+}
+
+.date__month__picker > span, .date__month__picker > button {
+    margin: 0 auto;
+    margin-top: 3.5vmin;
+}
+
+.date__month__picker {
+    margin-bottom: 2vmin;
+}
+
+.date__month__picker > span {
+    display: inline-block;
+    line-height: 1.5em;
+}
+
+.prev__button, .next__button {
+    width: 0;
+    height: 0;
+    border: 0 solid transparent;
+    border-top-width: 2em;
+    border-bottom-width: 2em;
+    background-color: transparent;
+    cursor: pointer;
+    user-select: none;
+}
+
+.prev__button:focus, .next__button:focus {
+    outline: none;
+}
+
+.dark .calendar {
+    box-shadow:  17px 17px 43px #0a0a0a, 
+    -17px -17px 43px #2a2a2a;
+    background: var(--darkBackground);
+}
+
+.dark .prev__button {
+    border-right: 2em solid var(--red);
+}
+
+.dark .next__button {
+    border-left: 2em solid var(--red);
+}
+
+.light .calendar {
+    -webkit-box-shadow: 5px 2px 10px 8px rgba(204,204,204,0.74); 
+    box-shadow: 5px 2px 10px 8px rgba(204,204,204,0.74);
+    background: var(--lightBackground);
+}
+
+.light .prev__button {
+    border-right: 2em solid var(--blue);
+}
+
+.light .next__button {
+    border-left: 2em solid var(--blue);
+}
+
+@keyframes fadeInLeft {
+    0% {
+       opacity: 0;
+       transform: translateX(-5vw);
+    }
+    100% {
+       opacity: 1;
+       /* transform: translateX(0); */
+       visibility: initial;
+    }
+ }
+
+
+ @keyframes fadeOutLeft {
+    0% {
+       opacity: 1;
+       /* transform: translateX(0); */
+    }
+    100% {
+       opacity: 0;
+       /* transform: translateX(-5vw); */
+       visibility: hidden;
+    }
+ }
