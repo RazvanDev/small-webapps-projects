@@ -53,8 +53,6 @@
     cursor: pointer;
 }
 
-
-
 .date__headers {    
     text-align: center;
     vertical-align: middle;
@@ -63,6 +61,96 @@
     line-height: var(--cellHeight);
     width: var(--cellWidth);
     height: var(--cellHeight);
+}
+
+.calendar__input__modal {
+    position: absolute;
+    background: #000;
+    min-width: 200px;
+    height: 5vh;
+    margin: 0 auto;
+    padding: 0;
+    top: 50px;
+    left: 50px;
+    font-family: robotoThin;
+    visibility: hidden;
+    z-index: 1001;
+}
+
+.calendar__input__modal__overlay {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background: transparent;
+    z-index: 1000;
+    display: none;
+}
+
+.calendar__input__modal__container {
+    width: inherit;
+    height: inherit;
+    display: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    background: #2a2a2a;
+}
+
+.calendar__input__modal__button {
+    width: 100px;
+    height: 3vh;
+    background: var(--red);
+    border: none;
+    border-radius: 25px;
+    color: var(--lightBackground);
+    user-select: none;
+    cursor: pointer;
+}
+
+.calendar__input__modal__button:focus {
+    outline: none;
+}
+
+.calendar__input__modal__button:hover {
+    box-shadow:  inset 17px 17px 43px #0a0a0a, 
+    -17px -17px 43px #2a2a2a;
+}
+
+.calendar__input__modal.show {
+    visibility: visible;
+}
+
+select, select:active {
+    background: var(--red);
+    color: var(--lightBackground);
+    width: 35px;
+    user-select: none;
+    font-family: robotoThin;
+    border-radius: 10px;
+    padding-left: 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color: white;
+    outline: none;
+}
+
+.calendar__input__modal label, .calendar__input__modal input[type="text"] {
+    width: 30px;
+    height: var(--cellHeight);
+    line-height: calc(var(--cellHeight) + 0.5vh);
+}
+
+.timer__separator {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.dark .calendar__input__modal input[type="text"] {
+    background-color: var(--red);
+    color: var(--lightBackground);
 }
 
 .dark .date__table {

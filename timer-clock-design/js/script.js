@@ -1,4 +1,6 @@
 let clockComponent = document.querySelector(".clock");
+let calendarComponent = document.querySelector(".calendar");
+
 let timeH = document.querySelector('.time__hours');
 let timeM = document.querySelector(".time__minutes");
 
@@ -41,7 +43,6 @@ clockComponent.onclick = () => {
 }
 
 let toggleCalendarComponent = () => {
-    let calendarComponent = document.querySelector(".calendar");
     if(!calendarComponent.classList.contains("hide") && !calendarComponent.classList.contains("show")) {
         calendarComponent.classList.add("show");
         clockComponent.classList.add("calendar__active");

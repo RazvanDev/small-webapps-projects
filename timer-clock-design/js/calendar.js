@@ -1,6 +1,8 @@
 const locale = navigator.languages != undefined ? navigator.languages[0] : navigator.language;
 const monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
 
+let timerInputComponent = document.querySelector(".calendar__input__modal");
+let timerOverlay = document.querySelector(".calendar__input__modal__overlay");
 let dateTable = document.querySelector(".date__table");
 let yearElement = document.querySelector(".date__year__picker");
 let monthElement = document.querySelector(".date__month__picker");
@@ -8,6 +10,7 @@ let monthElement = document.querySelector(".date__month__picker");
 let month = new Date().getMonth();
 let year = new Date().getFullYear();
 
+  
 yearElement.querySelector(".next__button").onclick = () => {
     let yearTextLabel = yearElement.querySelector("span");
     yearTextLabel.innerHTML = ++yearTextLabel.innerHTML; 
@@ -51,10 +54,37 @@ let generateDateCells = () => {
         for (const wd of row.children) {
             if(dayIndex < days.length && wd.getAttribute("data-weekday") == days[dayIndex].getDay()) {
                 wd.innerHTML = days[dayIndex].getDate();
+                
+                if(wd.innerHTML !== '') {
+                    wd.onclick = (e) => {
+                        let cellScreenPosition = wd.getBoundingClientRect();
+                        let leftPosition = (cellScreenPosition.left + cellScreenPosition.width);
+                        let topPosition = cellScreenPosition.top;
+
+                        if(leftPosition + timerInputComponent.getBoundingClientRect().width > window.innerWidth)
+                            leftPosition -= (cellScreenPosition.width + timerInputComponent.getBoundingClientRect().width); 
+                        
+
+                        timerOverlay.style.display = "initial";
+                        timerInputComponent.style.visibility = "visible";
+                        timerInputComponent.style.left = leftPosition + "px";
+                        timerInputComponent.style.top = topPosition + "px";
+                    }
+                }
+
                 dayIndex++;
             }
         }
     }
+}
+
+timerOverlay.onclick = (e) => {
+    if(timerInputComponent.contains(e.target)) {
+         timerInputComponent.style.visibility = "visible";
+     } else {
+         timerInputComponent.style.visibility = "hidden";
+         timerOverlay.style.display = "none";
+     }
 }
 
 let getDaysInMonth = (month, year) => {
